@@ -3,7 +3,7 @@
 A BrightScript / SceneGraph channel for [ATMusic](https://atmusic.atdevs.org) - browse, play and share music on your TV.
 Licensed under the **GNU GPL v3** (see `LICENSE`).
 
-> Status: development build (v0.4.6). It is a sideloadable developer channel, not yet on the Roku Channel Store.
+> Status: development build (v0.4.7). It is a sideloadable developer channel, not yet on the Roku Channel Store.
 
 ## Features
 
