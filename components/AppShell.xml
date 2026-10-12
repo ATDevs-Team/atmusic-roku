@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="AppShell" extends="Group">
+    <interface>
+        <!-- Must be declared here for MainScene's callFunc("HandleKey", ...)
+             to route to it - without this, callFunc() silently returns
+             Invalid instead of calling the function. -->
+        <function name="HandleKey" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/AppShell.brs" />
+    <script type="text/brightscript" uri="pkg:/components/AtclamVm.brs" />
+    <script type="text/brightscript" uri="pkg:/components/DebugLog.brs" />
+
+    <children>
+        <!-- ============================== Left nav rail ============== -->
+        <Rectangle id="navBg" width="300" height="1080" color="0x101014FF" />
+        <Label id="navTitle" text="ATMusic" translation="[32,44]"
+               font="font:LargeBoldSystemFont" color="0xFFFFFFFF" />
+
+        <Group id="navItems" translation="[0,120]" />
+
+        <!-- ============================== Content area ================ -->
+        <Label id="contentTitle" translation="[336,44]" width="1500" height="50"
+               font="font:LargeBoldSystemFont" color="0xFFFFFFFF" />
+        <Label id="contentSubtitle" translation="[336,96]" width="1500" height="36"
+               font="font:SmallSystemFont" color="0x9A9BA8FF" />
+
+        <Label id="emptyStateLabel" visible="false" translation="[336,220]" width="1400" height="80"
+               font="font:MediumSystemFont" color="0x9A9BA8FF" wrap="true" />
+
+        <MarkupGrid id="grid" translation="[336,150]"
+                    itemComponentName="TrackRow"
+                    numColumns="1" numRows="7"
+                    itemSize="[1400,104]" itemSpacing="[0,10]"
+                    drawFocusFeedback="false" />
+
+        <!-- ============================== Text view (changelog / credits detail) -->
+        <Group id="textView" visible="false" translation="[336,150]">
+            <Rectangle width="1400" height="800" color="0x16161AFF" />
+            <Label id="textLabel" translation="[32,28]" width="1336" height="744"
+                   font="font:MediumSystemFont" color="0xDCDCE2FF" wrap="true" lineSpacing="6" />
+        </Group>
+
+        <!-- ============================== Auth choice (Profile, logged out) -->
+        <Group id="authGroup" visible="false" translation="[336,220]">
+            <Label id="authMessage" text="Log in to like tracks, save favorites, and build playlists."
+                   width="1200" height="60" font="font:MediumSystemFont" color="0xDCDCE2FF" wrap="true" />
+            <ButtonGroup id="authButtons" translation="[0,90]"
+                         buttons="[&quot;Log in with phone (QR)&quot;,&quot;Log In&quot;,&quot;Sign Up&quot;]" minWidth="420" />
+        </Group>
+
+        <!-- ============================== Profile (logged in) ========= -->
+        <Group id="profileGroup" visible="false" translation="[336,150]">
+            <Label id="profileUsername" translation="[0,0]" width="1200" height="50"
+                   font="font:LargeBoldSystemFont" color="0xFFFFFFFF" />
+            <Label id="profileRole" translation="[0,54]" width="1200" height="34"
+                   font="font:SmallSystemFont" color="0x4FD1C5FF" />
+            <Label id="profileBio" translation="[0,96]" width="1200" height="60"
+                   font="font:SmallSystemFont" color="0x9A9BA8FF" wrap="true" />
+            <Label id="profileStats" translation="[0,164]" width="1200" height="34"
+                   font="font:SmallSystemFont" color="0x9A9BA8FF" />
+            <ButtonGroup id="profileButtons" translation="[0,220]"
+                         buttons="[&quot;Log Out&quot;]" minWidth="240" />
+        </Group>
+
+        <!-- ============================== Mini player bar ============= -->
+        <Group id="miniPlayer" visible="false">
+            <Rectangle width="1920" height="90" translation="[0,990]" color="0x101014FF" />
+            <Poster id="miniCover" translation="[336,1005]" width="60" height="60"
+                    loadWidth="60" loadHeight="60" loadDisplayMode="scaleToZoom" />
+            <Label id="miniTitle" translation="[412,1000]" width="900" height="34"
+                   font="font:MediumBoldSystemFont" color="0xFFFFFFFF" ellipsizeOnBoundary="true" />
+            <Label id="miniSubtitle" translation="[412,1032]" width="900" height="30"
+                   font="font:SmallSystemFont" color="0x9A9BA8FF" ellipsizeOnBoundary="true" />
+            <Label id="miniState" translation="[1500,1015]" width="380" height="34"
+                   font="font:SmallSystemFont" color="0x4FD1C5FF" horizAlign="right" />
+        </Group>
+
+        <!-- ============================== Now Playing overlay ========= -->
+        <Group id="nowPlayingOverlay" visible="false">
+            <Rectangle width="1920" height="1080" color="0x0A0A0EF5" />
+
+            <Poster id="npCover" translation="[160,140]" width="420" height="420"
+                    loadWidth="420" loadHeight="420" loadDisplayMode="scaleToZoom" />
+            <Rectangle id="npCoverFallback" translation="[160,140]" width="420" height="420" color="0x2A2A2FFF" />
+
+            <Label id="npTitle" translation="[640,150]" width="1120" height="60"
+                   font="font:LargeBoldSystemFont" color="0xFFFFFFFF" wrap="true" />
+            <Label id="npArtist" translation="[640,220]" width="1120" height="46"
+                   font="font:MediumSystemFont" color="0x9A9BA8FF" />
+            <Label id="npStats" translation="[640,276]" width="1120" height="40"
+                   font="font:SmallSystemFont" color="0x9A9BA8FF" />
+            <Label id="npStatus" translation="[640,320]" width="1120" height="40"
+                   font="font:SmallSystemFont" color="0x4FD1C5FF" />
+
+            <ButtonGroup id="npButtons" translation="[640,390]"
+                         buttons="[&quot;Play/Pause&quot;,&quot;Like&quot;,&quot;Dislike&quot;,&quot;Favorite&quot;,&quot;Add to Playlist&quot;,&quot;Lyrics&quot;,&quot;Visualizer&quot;,&quot;Close&quot;]"
+                         minWidth="320" />
+        </Group>
+
+        <!-- ============================== Playlist picker overlay ====== -->
+        <Group id="playlistPickerOverlay" visible="false">
+            <Rectangle width="1920" height="1080" color="0x0A0A0EF5" />
+            <Label id="pickerTitle" text="Add to Playlist" translation="[640,240]" width="900" height="60"
+                   font="font:LargeBoldSystemFont" color="0xFFFFFFFF" />
+            <ButtonGroup id="pickerButtons" translation="[640,320]" minWidth="360" />
+        </Group>
+
+        <!-- ============================== Visualizer overlay (runs ATCLAM scripts) -->
+        <Group id="visOverlay" visible="false">
+            <Rectangle width="1920" height="1080" color="0x07070AFF" />
+            <Label id="visTitle" translation="[160,60]" width="1600" height="50" font="font:MediumBoldSystemFont" color="0xFFFFFFFF" ellipsizeOnBoundary="true" />
+            <Label id="visNote" translation="[160,112]" width="1600" height="34" font="font:SmallSystemFont" color="0x9A9BA8FF" />
+            <Group id="visStage" translation="[328,230]" clippingRect="[0,0,1264,560]" />
+            <Label id="visStatus" translation="[160,880]" width="1600" height="34" font="font:SmallSystemFont" color="0xF5C518FF" horizAlign="center" />
+            <Label id="visHint" text="Left / Right: change visualizer     Back: close" translation="[160,980]" width="1600" height="36" font="font:SmallSystemFont" color="0x6A6A78FF" horizAlign="center" />
+        </Group>
+        <Timer id="visTimer" duration="0.1" repeat="true" />
+
+        <!-- ============================== Lyrics overlay ================ -->
+        <Group id="lyOverlay" visible="false">
+            <Rectangle width="1920" height="1080" color="0x0A0A0EFF" />
+            <Label id="lyTitle" translation="[160,70]" width="1600" height="50" font="font:MediumBoldSystemFont" color="0xFFFFFFFF" ellipsizeOnBoundary="true" />
+            <Label id="lyArtist" translation="[160,120]" width="1600" height="36" font="font:SmallSystemFont" color="0x9A9BA8FF" />
+            <Label id="lyPrev2" translation="[160,260]" width="1600" height="50" font="font:MediumSystemFont" color="0x3A3A44FF" horizAlign="center" ellipsizeOnBoundary="true" />
+            <Label id="lyPrev" translation="[160,330]" width="1600" height="56" font="font:MediumSystemFont" color="0x6A6A78FF" horizAlign="center" ellipsizeOnBoundary="true" />
+            <Label id="lyCur" translation="[160,420]" width="1600" height="150" font="font:LargeBoldSystemFont" color="0xFFFFFFFF" horizAlign="center" vertAlign="center" wrap="true" />
+            <Label id="lyNext" translation="[160,600]" width="1600" height="56" font="font:MediumSystemFont" color="0x6A6A78FF" horizAlign="center" ellipsizeOnBoundary="true" />
+            <Label id="lyNext2" translation="[160,670]" width="1600" height="50" font="font:MediumSystemFont" color="0x3A3A44FF" horizAlign="center" ellipsizeOnBoundary="true" />
+            <Label id="lyAll" translation="[160,190]" width="1600" height="780" font="font:MediumSystemFont" color="0xDCDCE2FF" wrap="true" lineSpacing="8" visible="false" />
+            <Label id="lyHint" text="Press Back to close" translation="[160,980]" width="1600" height="36" font="font:SmallSystemFont" color="0x6A6A78FF" horizAlign="center" />
+        </Group>
+        <Timer id="lyTimer" duration="0.4" repeat="true" />
+
+        <!-- ============================== Phone (QR) login overlay ===== -->
+        <Group id="qrOverlay" visible="false">
+            <Rectangle width="1920" height="1080" color="0x0A0A0EF8" />
+            <Label id="qrTitle" text="Log in with your phone" translation="[200,170]" width="1500" height="60"
+                   font="font:LargeBoldSystemFont" color="0xFFFFFFFF" />
+            <Label id="qrSteps" translation="[200,260]" width="900" height="420" wrap="true" lineSpacing="10"
+                   font="font:MediumSystemFont" color="0xDCDCE2FF"
+                   text="1. On your phone, open the camera and scan the code.&#10;&#10;2. Sign in to ATMusic there if you aren't already.&#10;&#10;3. Check the device name shown, then tap Approve.&#10;&#10;This screen logs in as soon as you approve." />
+            <Rectangle id="qrWhite" translation="[1150,200]" width="500" height="500" color="0xFFFFFFFF" />
+            <Poster id="qrPoster" translation="[1160,210]" width="480" height="480"
+                    loadWidth="480" loadHeight="480" loadDisplayMode="scaleToFit" />
+            <Label id="qrStatus" translation="[200,730]" width="1500" height="46"
+                   font="font:MediumSystemFont" color="0x4FD1C5FF" />
+            <Label id="qrHint" text="Press Back to cancel" translation="[200,790]" width="1500" height="36"
+                   font="font:SmallSystemFont" color="0x9A9BA8FF" />
+        </Group>
+
+        <Timer id="qrTimer" duration="3" repeat="true" />
+        <Timer id="syncTimer" duration="1" repeat="true" />
+
+        <!-- ============================== Toast ======================== -->
+        <Group id="toastGroup" visible="false" translation="[660,900]">
+            <Rectangle id="toastBg" width="600" height="60" color="0x2A2A2FF2" />
+            <Label id="toastLabel" translation="[20,16]" width="560" height="30"
+                   font="font:SmallSystemFont" color="0xFFFFFFFF" horizAlign="center" />
+        </Group>
+
+        <Timer id="toastTimer" duration="2.5" />
+    </children>
+</component>

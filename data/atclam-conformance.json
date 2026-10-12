@@ -1,0 +1,1620 @@
+{
+  "bytecode_format_version": 2,
+  "cases": [
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjIuMH0seyJQdXNoTnVtYmVyIjozLjB9LHsiUHVzaE51bWJlciI6NC4wfSx7IkJpbmFyeU9wIjoiTXVsIn0seyJCaW5hcnlPcCI6IkFkZCJ9LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjF9fSwiUG9wIl0sImxvY2FsX2NvdW50IjowfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 7,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "14"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "arithmetic_precedence",
+      "source": "capabilities { server.call }\non track.started { server.call(2 + 3 * 4) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEwLjB9LHsiUHVzaE51bWJlciI6NC4wfSx7IlB1c2hOdW1iZXIiOjIuMH0seyJCaW5hcnlPcCI6IkRpdiJ9LHsiQmluYXJ5T3AiOiJTdWIifSx7IlB1c2hOdW1iZXIiOjcuMH0seyJQdXNoTnVtYmVyIjoyLjB9LHsiQmluYXJ5T3AiOiJEaXYifSx7IlB1c2hOdW1iZXIiOjMuMH0seyJQdXNoTnVtYmVyIjo0LjB9LHsiQmluYXJ5T3AiOiJBZGQifSx7IlVuYXJ5T3AiOiJOZWcifSx7IkNhbGwiOnsibmFtZSI6InNlcnZlci5jYWxsIiwiYXJnX2NvdW50IjozfX0sIlBvcCJdLCJsb2NhbF9jb3VudCI6MH19XSwiZnVuY3Rpb25zIjpbXSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 14,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "8"
+              },
+              {
+                "n": "3.5"
+              },
+              {
+                "n": "-7"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "subtraction_division",
+      "source": "capabilities { server.call }\non track.started { server.call(10 - 4 / 2, 7 / 2, -(3 + 4)) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEuMH0seyJQdXNoTnVtYmVyIjoyLjB9LHsiQmluYXJ5T3AiOiJMdCJ9LHsiUHVzaE51bWJlciI6Mi4wfSx7IlB1c2hOdW1iZXIiOjEuMH0seyJCaW5hcnlPcCI6Ikx0In0seyJQdXNoTnVtYmVyIjoyLjB9LHsiUHVzaE51bWJlciI6Mi4wfSx7IkJpbmFyeU9wIjoiTHRFcSJ9LHsiUHVzaE51bWJlciI6My4wfSx7IlB1c2hOdW1iZXIiOjQuMH0seyJCaW5hcnlPcCI6Ikd0RXEifSx7IlB1c2hOdW1iZXIiOjUuMH0seyJQdXNoTnVtYmVyIjo0LjB9LHsiQmluYXJ5T3AiOiJHdCJ9LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjV9fSwiUG9wIl0sImxvY2FsX2NvdW50IjowfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 17,
+        "host_calls": [
+          {
+            "args": [
+              true,
+              false,
+              true,
+              false,
+              true
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "comparisons",
+      "source": "capabilities { server.call }\non track.started { server.call(1 < 2, 2 < 1, 2 <= 2, 3 >= 4, 5 > 4) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEuMH0seyJQdXNoTnVtYmVyIjoxLjB9LHsiQmluYXJ5T3AiOiJFcSJ9LHsiUHVzaE51bWJlciI6MS4wfSx7IlB1c2hOdW1iZXIiOjIuMH0seyJCaW5hcnlPcCI6IkVxIn0seyJQdXNoU3RyaW5nIjoiYSJ9LHsiUHVzaFN0cmluZyI6ImEifSx7IkJpbmFyeU9wIjoiRXEifSx7IlB1c2hTdHJpbmciOiJhIn0seyJQdXNoU3RyaW5nIjoiYiJ9LHsiQmluYXJ5T3AiOiJOb3RFcSJ9LHsiUHVzaEJvb2wiOnRydWV9LHsiUHVzaEJvb2wiOnRydWV9LHsiQmluYXJ5T3AiOiJFcSJ9LHsiUHVzaE51bWJlciI6MS4wfSx7IlB1c2hTdHJpbmciOiIxIn0seyJCaW5hcnlPcCI6IkVxIn0seyJDYWxsIjp7Im5hbWUiOiJzZXJ2ZXIuY2FsbCIsImFyZ19jb3VudCI6Nn19LCJQb3AiXSwibG9jYWxfY291bnQiOjB9fV0sImZ1bmN0aW9ucyI6W10sInJlcXVpcmVkX3RpZXIiOiJPcmRpbmFyeSIsInJ1bnRpbWUiOiJDbGllbnQifQ==",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 20,
+        "host_calls": [
+          {
+            "args": [
+              true,
+              false,
+              true,
+              true,
+              true,
+              false
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "equality_all_types",
+      "source": "capabilities { server.call }\non track.started { server.call(1 == 1, 1 == 2, \"a\" == \"a\", \"a\" != \"b\", true == true, 1 == \"1\") }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hCb29sIjp0cnVlfSx7IlB1c2hCb29sIjpmYWxzZX0seyJCaW5hcnlPcCI6IkFuZCJ9LHsiUHVzaEJvb2wiOnRydWV9LHsiUHVzaEJvb2wiOmZhbHNlfSx7IkJpbmFyeU9wIjoiT3IifSx7IlB1c2hCb29sIjp0cnVlfSx7IlVuYXJ5T3AiOiJOb3QifSx7IlB1c2hOdW1iZXIiOjAuMH0seyJVbmFyeU9wIjoiTm90In0seyJQdXNoU3RyaW5nIjoiIn0seyJVbmFyeU9wIjoiTm90In0seyJQdXNoU3RyaW5nIjoieCJ9LHsiVW5hcnlPcCI6Ik5vdCJ9LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjZ9fSwiUG9wIl0sImxvY2FsX2NvdW50IjowfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 16,
+        "host_calls": [
+          {
+            "args": [
+              false,
+              true,
+              false,
+              true,
+              true,
+              false
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "logic_and_or_not",
+      "source": "capabilities { server.call }\non track.started { server.call(true && false, true || false, !true, !0, !\"\", !\"x\") }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJEYXRhUHVibGljIiwiU2VydmVyQ2FsbCJdLCJwbGF0Zm9ybXMiOltdLCJpbXBvcnRzIjpbXSwiaGFuZGxlcnMiOlt7ImtpbmQiOiJFdmVudCIsImV2ZW50X25hbWUiOlsidHJhY2siLCJzdGFydGVkIl0sInByaW9yaXR5IjowLCJibG9jayI6eyJjb2RlIjpbeyJMb2FkUGF0aCI6WyJhdG11c2ljIiwicGxheWJhY2siLCJwb3NpdGlvbiJdfSx7IkxvYWRQYXRoIjpbImF0bXVzaWMiLCJ0cmFjayIsInRpdGxlIl19LHsiTG9hZFBhdGgiOlsiYXRtdXNpYyIsInBsYXliYWNrIiwicGxheWluZyJdfSx7IkNhbGwiOnsibmFtZSI6InNlcnZlci5jYWxsIiwiYXJnX2NvdW50IjozfX0sIlBvcCJdLCJsb2NhbF9jb3VudCI6MH19XSwiZnVuY3Rpb25zIjpbXSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 5,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "127.5"
+              },
+              "Ride Low",
+              true
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "context_number_string_bool",
+      "source": "capabilities { data.public, server.call }\non track.started { server.call(atmusic.playback.position, atmusic.track.title, atmusic.playback.playing) }",
+      "values": [
+        [
+          "atmusic.playback.position",
+          {
+            "n": "127.5"
+          }
+        ],
+        [
+          "atmusic.track.title",
+          "Ride Low"
+        ],
+        [
+          "atmusic.playback.playing",
+          true
+        ]
+      ],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJEYXRhUHVibGljIiwiU2VydmVyQ2FsbCJdLCJwbGF0Zm9ybXMiOltdLCJpbXBvcnRzIjpbXSwiaGFuZGxlcnMiOlt7ImtpbmQiOiJFdmVudCIsImV2ZW50X25hbWUiOlsidHJhY2siLCJzdGFydGVkIl0sInByaW9yaXR5IjowLCJibG9jayI6eyJjb2RlIjpbeyJMb2FkUGF0aCI6WyJhdG11c2ljIiwidHJhY2siLCJ0aXRsZSJdfSx7IkNhbGwiOnsibmFtZSI6InNlcnZlci5jYWxsIiwiYXJnX2NvdW50IjoxfX0sIlBvcCJdLCJsb2NhbF9jb3VudCI6MH19XSwiZnVuY3Rpb25zIjpbXSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 3,
+        "host_calls": [
+          {
+            "args": [
+              null
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "missing_path_is_null",
+      "source": "capabilities { data.public, server.call }\non track.started { server.call(atmusic.track.title) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjAuMH0seyJTdG9yZUxvY2FsIjowfSx7IlB1c2hOdW1iZXIiOjAuMH0seyJTdG9yZUxvY2FsIjoxfSx7IkxvYWRMb2NhbCI6MH0seyJQdXNoTnVtYmVyIjoxMC4wfSx7IkJpbmFyeU9wIjoiTHQifSx7Ikp1bXBJZkZhbHNlIjoxN30seyJMb2FkTG9jYWwiOjF9LHsiTG9hZExvY2FsIjowfSx7IkJpbmFyeU9wIjoiQWRkIn0seyJTdG9yZUxvY2FsIjoxfSx7IkxvYWRMb2NhbCI6MH0seyJQdXNoTnVtYmVyIjoxLjB9LHsiQmluYXJ5T3AiOiJBZGQifSx7IlN0b3JlTG9jYWwiOjB9LHsiSnVtcCI6NH0seyJMb2FkTG9jYWwiOjF9LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjF9fSwiUG9wIl0sImxvY2FsX2NvdW50IjoyfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 141,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "45"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "while_loop_sum",
+      "source": "capabilities { server.call }\non track.started {\n let i = 0\n let sum = 0\n while i < 10 {\n  sum = sum + i\n  i = i + 1\n }\n server.call(sum)\n}",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjUuMH0seyJDYWxsIjp7Im5hbWUiOiJjbGFzc2lmeSIsImFyZ19jb3VudCI6MX19LHsiUHVzaE51bWJlciI6NS4wfSx7IlVuYXJ5T3AiOiJOZWcifSx7IkNhbGwiOnsibmFtZSI6ImNsYXNzaWZ5IiwiYXJnX2NvdW50IjoxfX0seyJQdXNoTnVtYmVyIjowLjB9LHsiQ2FsbCI6eyJuYW1lIjoiY2xhc3NpZnkiLCJhcmdfY291bnQiOjF9fSx7IkNhbGwiOnsibmFtZSI6InNlcnZlci5jYWxsIiwiYXJnX2NvdW50IjozfX0sIlBvcCJdLCJsb2NhbF9jb3VudCI6MH19XSwiZnVuY3Rpb25zIjpbeyJuYW1lIjoiY2xhc3NpZnkiLCJwYXJhbV9jb3VudCI6MSwiYmxvY2siOnsiY29kZSI6W3siTG9hZExvY2FsIjowfSx7IlB1c2hOdW1iZXIiOjAuMH0seyJCaW5hcnlPcCI6Ikd0In0seyJKdW1wSWZGYWxzZSI6N30seyJQdXNoTnVtYmVyIjoxLjB9LCJSZXR1cm4iLHsiSnVtcCI6MTB9LHsiUHVzaE51bWJlciI6MS4wfSx7IlVuYXJ5T3AiOiJOZWcifSwiUmV0dXJuIl0sImxvY2FsX2NvdW50IjoxfX1dLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 29,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "1"
+              },
+              {
+                "n": "-1"
+              },
+              {
+                "n": "-1"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "if_else_branches",
+      "source": "capabilities { server.call }\nfn classify(x) {\n if x > 0 {\n  return 1\n } else {\n  return -1\n }\n}\non track.started { server.call(classify(5), classify(-5), classify(0)) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEwLjB9LHsiQ2FsbCI6eyJuYW1lIjoiZmFjdCIsImFyZ19jb3VudCI6MX19LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjF9fSwiUG9wIl0sImxvY2FsX2NvdW50IjowfX1dLCJmdW5jdGlvbnMiOlt7Im5hbWUiOiJmYWN0IiwicGFyYW1fY291bnQiOjEsImJsb2NrIjp7ImNvZGUiOlt7IkxvYWRMb2NhbCI6MH0seyJQdXNoTnVtYmVyIjoxLjB9LHsiQmluYXJ5T3AiOiJMdEVxIn0seyJKdW1wSWZGYWxzZSI6Nn0seyJQdXNoTnVtYmVyIjoxLjB9LCJSZXR1cm4iLHsiTG9hZExvY2FsIjowfSx7IkxvYWRMb2NhbCI6MH0seyJQdXNoTnVtYmVyIjoxLjB9LHsiQmluYXJ5T3AiOiJTdWIifSx7IkNhbGwiOnsibmFtZSI6ImZhY3QiLCJhcmdfY291bnQiOjF9fSx7IkJpbmFyeU9wIjoiTXVsIn0sIlJldHVybiJdLCJsb2NhbF9jb3VudCI6MX19XSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 109,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "3628800"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "recursion_factorial",
+      "source": "capabilities { server.call }\nfn fact(n) {\n if n <= 1 {\n  return 1\n }\n return n * fact(n - 1)\n}\non track.started { server.call(fact(10)) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEwLjB9LHsiUHVzaE51bWJlciI6My4wfSx7IlB1c2hOdW1iZXIiOjIuMH0seyJDYWxsIjp7Im5hbWUiOiJzdWIzIiwiYXJnX2NvdW50IjozfX0seyJDYWxsIjp7Im5hbWUiOiJzZXJ2ZXIuY2FsbCIsImFyZ19jb3VudCI6MX19LCJQb3AiXSwibG9jYWxfY291bnQiOjB9fV0sImZ1bmN0aW9ucyI6W3sibmFtZSI6InN1YjMiLCJwYXJhbV9jb3VudCI6MywiYmxvY2siOnsiY29kZSI6W3siTG9hZExvY2FsIjowfSx7IkxvYWRMb2NhbCI6MX0seyJCaW5hcnlPcCI6IlN1YiJ9LHsiTG9hZExvY2FsIjoyfSx7IkJpbmFyeU9wIjoiU3ViIn0sIlJldHVybiJdLCJsb2NhbF9jb3VudCI6M319XSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 12,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "5"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "function_args_order",
+      "source": "capabilities { server.call }\nfn sub3(a, b, c) { return a - b - c }\non track.started { server.call(sub3(10, 3, 2)) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEuMH0seyJDYWxsIjp7Im5hbWUiOiJub3RoaW5nIiwiYXJnX2NvdW50IjoxfX0seyJDYWxsIjp7Im5hbWUiOiJzZXJ2ZXIuY2FsbCIsImFyZ19jb3VudCI6MX19LCJQb3AiXSwibG9jYWxfY291bnQiOjB9fV0sImZ1bmN0aW9ucyI6W3sibmFtZSI6Im5vdGhpbmciLCJwYXJhbV9jb3VudCI6MSwiYmxvY2siOnsiY29kZSI6W3siTG9hZExvY2FsIjowfSx7IlN0b3JlTG9jYWwiOjF9XSwibG9jYWxfY291bnQiOjJ9fV0sInJlcXVpcmVkX3RpZXIiOiJPcmRpbmFyeSIsInJ1bnRpbWUiOiJDbGllbnQifQ==",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 6,
+        "host_calls": [
+          {
+            "args": [
+              null
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "function_no_return_is_null",
+      "source": "capabilities { server.call }\nfn nothing(x) { let y = x }\non track.started { server.call(nothing(1)) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEwLjB9LHsiUHVzaE51bWJlciI6MjAuMH0seyJQdXNoTnVtYmVyIjozMC4wfSx7Ik1ha2VMaXN0IjozfSx7IlN0b3JlTG9jYWwiOjB9LHsiTG9hZExvY2FsIjowfSx7IlB1c2hOdW1iZXIiOjEuMH0sIkluZGV4R2V0Iix7IkxvYWRMb2NhbCI6MH0sIkxlbiIseyJMb2FkTG9jYWwiOjB9LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjN9fSwiUG9wIl0sImxvY2FsX2NvdW50IjoxfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 13,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "20"
+              },
+              {
+                "n": "3"
+              },
+              [
+                {
+                  "n": "10"
+                },
+                {
+                  "n": "20"
+                },
+                {
+                  "n": "30"
+                }
+              ]
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "list_literal_index_len",
+      "source": "capabilities { server.call }\non track.started {\n let xs = [10, 20, 30]\n server.call(xs[1], len(xs), xs)\n}",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEuMH0seyJQdXNoTnVtYmVyIjoyLjB9LHsiUHVzaE51bWJlciI6My4wfSx7Ik1ha2VMaXN0IjozfSx7IlN0b3JlTG9jYWwiOjB9LHsiUHVzaE51bWJlciI6OTkuMH0seyJQdXNoTnVtYmVyIjowLjB9LHsiSW5kZXhTZXRMb2NhbCI6MH0seyJMb2FkTG9jYWwiOjB9LHsiUHVzaE51bWJlciI6MC4wfSwiSW5kZXhHZXQiLHsiTG9hZExvY2FsIjowfSx7IkNhbGwiOnsibmFtZSI6InNlcnZlci5jYWxsIiwiYXJnX2NvdW50IjoyfX0sIlBvcCJdLCJsb2NhbF9jb3VudCI6MX19XSwiZnVuY3Rpb25zIjpbXSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 14,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "99"
+              },
+              [
+                {
+                  "n": "99"
+                },
+                {
+                  "n": "2"
+                },
+                {
+                  "n": "3"
+                }
+              ]
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "list_index_assign",
+      "source": "capabilities { server.call }\non track.started {\n let xs = [1, 2, 3]\n xs[0] = 99\n server.call(xs[0], xs)\n}",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEuMH0seyJQdXNoU3RyaW5nIjoidHdvIn0seyJQdXNoQm9vbCI6dHJ1ZX0seyJQdXNoTnVtYmVyIjozLjB9LHsiUHVzaE51bWJlciI6NC4wfSx7Ik1ha2VMaXN0IjoyfSx7Ik1ha2VMaXN0Ijo0fSx7IlN0b3JlTG9jYWwiOjB9LHsiTG9hZExvY2FsIjowfSx7IkxvYWRMb2NhbCI6MH0sIkxlbiIseyJDYWxsIjp7Im5hbWUiOiJzZXJ2ZXIuY2FsbCIsImFyZ19jb3VudCI6Mn19LCJQb3AiXSwibG9jYWxfY291bnQiOjF9fV0sImZ1bmN0aW9ucyI6W10sInJlcXVpcmVkX3RpZXIiOiJPcmRpbmFyeSIsInJ1bnRpbWUiOiJDbGllbnQifQ==",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 13,
+        "host_calls": [
+          {
+            "args": [
+              [
+                {
+                  "n": "1"
+                },
+                "two",
+                true,
+                [
+                  {
+                    "n": "3"
+                  },
+                  {
+                    "n": "4"
+                  }
+                ]
+              ],
+              {
+                "n": "4"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "list_heterogeneous_and_nested",
+      "source": "capabilities { server.call }\non track.started {\n let xs = [1, \"two\", true, [3, 4]]\n server.call(xs, len(xs))\n}",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hTdHJpbmciOiJoZWxsbyJ9LCJMZW4iLHsiUHVzaFN0cmluZyI6IiJ9LCJMZW4iLHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjJ9fSwiUG9wIl0sImxvY2FsX2NvdW50IjowfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 6,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "5"
+              },
+              {
+                "n": "0"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "string_len",
+      "source": "capabilities { server.call }\non track.started { server.call(len(\"hello\"), len(\"\")) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjUuMH0seyJQdXNoTnVtYmVyIjo2LjB9LHsiUHVzaE51bWJlciI6Ny4wfSx7IlB1c2hOdW1iZXIiOjguMH0seyJNYWtlTGlzdCI6NH0seyJTdG9yZUxvY2FsIjowfSx7IlB1c2hOdW1iZXIiOjAuMH0seyJTdG9yZUxvY2FsIjoxfSx7IlB1c2hOdW1iZXIiOjAuMH0seyJTdG9yZUxvY2FsIjoyfSx7IkxvYWRMb2NhbCI6MX0seyJMb2FkTG9jYWwiOjB9LCJMZW4iLHsiQmluYXJ5T3AiOiJMdCJ9LHsiSnVtcElmRmFsc2UiOjI2fSx7IkxvYWRMb2NhbCI6Mn0seyJMb2FkTG9jYWwiOjB9LHsiTG9hZExvY2FsIjoxfSwiSW5kZXhHZXQiLHsiQmluYXJ5T3AiOiJBZGQifSx7IlN0b3JlTG9jYWwiOjJ9LHsiTG9hZExvY2FsIjoxfSx7IlB1c2hOdW1iZXIiOjEuMH0seyJCaW5hcnlPcCI6IkFkZCJ9LHsiU3RvcmVMb2NhbCI6MX0seyJKdW1wIjoxMH0seyJMb2FkTG9jYWwiOjJ9LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjF9fSwiUG9wIl0sImxvY2FsX2NvdW50IjozfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 82,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "26"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "list_loop_sum",
+      "source": "capabilities { server.call }\non track.started {\n let xs = [5, 6, 7, 8]\n let i = 0\n let t = 0\n while i < len(xs) {\n  t = t + xs[i]\n  i = i + 1\n }\n server.call(t)\n}",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTdG9yYWdlU2NyaXB0Il0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsImVuZGVkIl0sInByaW9yaXR5IjowLCJibG9jayI6eyJjb2RlIjpbeyJQdXNoTnVtYmVyIjowLjB9LHsiU3RvcmVMb2NhbCI6MH0seyJMb2FkTG9jYWwiOjB9LHsiUHVzaE51bWJlciI6My4wfSx7IkJpbmFyeU9wIjoiTHQifSx7Ikp1bXBJZkZhbHNlIjoxM30seyJQdXNoTnVtYmVyIjoyLjB9LHsiSW5jcmVtZW50U3RvcmFnZSI6WyJnbG9iYWwiLCJwbGF5cyJdfSx7IkxvYWRMb2NhbCI6MH0seyJQdXNoTnVtYmVyIjoxLjB9LHsiQmluYXJ5T3AiOiJBZGQifSx7IlN0b3JlTG9jYWwiOjB9LHsiSnVtcCI6Mn1dLCJsb2NhbF9jb3VudCI6MX19XSwiZnVuY3Rpb25zIjpbXSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "ended"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 39,
+        "host_calls": [],
+        "ok": true,
+        "storage_ops": [
+          {
+            "by": {
+              "n": "2"
+            },
+            "op": "increment",
+            "path": "global.plays"
+          },
+          {
+            "by": {
+              "n": "2"
+            },
+            "op": "increment",
+            "path": "global.plays"
+          },
+          {
+            "by": {
+              "n": "2"
+            },
+            "op": "increment",
+            "path": "global.plays"
+          }
+        ]
+      },
+      "fuel_budget": 10000,
+      "name": "increment_storage",
+      "source": "capabilities { storage.script }\non track.ended {\n let i = 0\n while i < 3 {\n  increment global.plays by 2\n  i = i + 1\n }\n}",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTdG9yYWdlU2NyaXB0Il0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsImVuZGVkIl0sInByaW9yaXR5IjowLCJibG9jayI6eyJjb2RlIjpbeyJQdXNoTnVtYmVyIjoxMDAuMH0seyJTZXRTdG9yYWdlIjpbImdsb2JhbCIsImhpZ2hfc2NvcmUiXX1dLCJsb2NhbF9jb3VudCI6MH19XSwiZnVuY3Rpb25zIjpbXSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "ended"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 2,
+        "host_calls": [],
+        "ok": true,
+        "storage_ops": [
+          {
+            "expected_version": 7,
+            "op": "set",
+            "path": "global.high_score",
+            "value": {
+              "n": "100"
+            }
+          }
+        ]
+      },
+      "fuel_budget": 10000,
+      "name": "set_storage_with_version_token",
+      "source": "capabilities { storage.script }\non track.ended { set global.high_score = 100 }",
+      "values": [],
+      "version_tokens": {
+        "global.high_score": 7
+      }
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJFdmVudENhbmNlbCIsIlNlcnZlckNhbGwiXSwicGxhdGZvcm1zIjpbXSwiaW1wb3J0cyI6W10sImhhbmRsZXJzIjpbeyJraW5kIjoiQmVmb3JlIiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsImJlZm9yZV9wbGF5Il0sInByaW9yaXR5IjowLCJibG9jayI6eyJjb2RlIjpbeyJQdXNoTnVtYmVyIjoxLjB9LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjF9fSwiUG9wIiwiQ2FuY2VsRXZlbnQiLHsiUHVzaE51bWJlciI6Mi4wfSx7IkNhbGwiOnsibmFtZSI6InNlcnZlci5jYWxsIiwiYXJnX2NvdW50IjoxfX0sIlBvcCJdLCJsb2NhbF9jb3VudCI6MH19XSwiZnVuY3Rpb25zIjpbXSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "before_play"
+      ],
+      "expect": {
+        "cancelled": true,
+        "fuel_used": 4,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "1"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "before_hook_cancel",
+      "source": "capabilities { event.cancel, server.call }\nbefore track.before_play {\n server.call(1)\n cancel\n server.call(2)\n}",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hCb29sIjp0cnVlfSx7Ikp1bXBJZkZhbHNlIjo1fSx7IlB1c2hOdW1iZXIiOjEuMH0seyJTdG9yZUxvY2FsIjowfSx7Ikp1bXAiOjB9XSwibG9jYWxfY291bnQiOjF9fV0sImZ1bmN0aW9ucyI6W10sInJlcXVpcmVkX3RpZXIiOiJPcmRpbmFyeSIsInJ1bnRpbWUiOiJDbGllbnQifQ==",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "error_kind": "fuel",
+        "ok": false
+      },
+      "fuel_budget": 500,
+      "name": "fuel_exhaustion_infinite_loop",
+      "source": "capabilities { server.call }\non track.started { while true { let x = 1 } }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEuMH0seyJQdXNoU3RyaW5nIjoiYSJ9LHsiQmluYXJ5T3AiOiJBZGQifSx7IkNhbGwiOnsibmFtZSI6InNlcnZlci5jYWxsIiwiYXJnX2NvdW50IjoxfX0sIlBvcCJdLCJsb2NhbF9jb3VudCI6MH19XSwiZnVuY3Rpb25zIjpbXSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "error_kind": "type",
+        "ok": false
+      },
+      "fuel_budget": 10000,
+      "name": "type_error_add_string",
+      "source": "capabilities { server.call }\non track.started { server.call(1 + \"a\") }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hTdHJpbmciOiJhIn0seyJVbmFyeU9wIjoiTmVnIn0seyJDYWxsIjp7Im5hbWUiOiJzZXJ2ZXIuY2FsbCIsImFyZ19jb3VudCI6MX19LCJQb3AiXSwibG9jYWxfY291bnQiOjB9fV0sImZ1bmN0aW9ucyI6W10sInJlcXVpcmVkX3RpZXIiOiJPcmRpbmFyeSIsInJ1bnRpbWUiOiJDbGllbnQifQ==",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "error_kind": "type",
+        "ok": false
+      },
+      "fuel_budget": 10000,
+      "name": "type_error_negate_string",
+      "source": "capabilities { server.call }\non track.started { server.call(-\"a\") }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hTdHJpbmciOiJhIn0seyJQdXNoU3RyaW5nIjoiYiJ9LHsiQmluYXJ5T3AiOiJMdCJ9LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjF9fSwiUG9wIl0sImxvY2FsX2NvdW50IjowfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "error_kind": "type",
+        "ok": false
+      },
+      "fuel_budget": 10000,
+      "name": "type_error_compare_string",
+      "source": "capabilities { server.call }\non track.started { server.call(\"a\" < \"b\") }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEuMH0seyJQdXNoTnVtYmVyIjoyLjB9LHsiTWFrZUxpc3QiOjJ9LHsiU3RvcmVMb2NhbCI6MH0seyJMb2FkTG9jYWwiOjB9LHsiUHVzaE51bWJlciI6Mi4wfSwiSW5kZXhHZXQiLHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjF9fSwiUG9wIl0sImxvY2FsX2NvdW50IjoxfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "error_kind": "type",
+        "ok": false
+      },
+      "fuel_budget": 10000,
+      "name": "index_out_of_range",
+      "source": "capabilities { server.call }\non track.started { let xs = [1, 2]\n server.call(xs[2]) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEuMH0seyJQdXNoTnVtYmVyIjoyLjB9LHsiTWFrZUxpc3QiOjJ9LHsiU3RvcmVMb2NhbCI6MH0seyJMb2FkTG9jYWwiOjB9LHsiUHVzaE51bWJlciI6MC4wfSx7IlB1c2hOdW1iZXIiOjEuMH0seyJCaW5hcnlPcCI6IlN1YiJ9LCJJbmRleEdldCIseyJDYWxsIjp7Im5hbWUiOiJzZXJ2ZXIuY2FsbCIsImFyZ19jb3VudCI6MX19LCJQb3AiXSwibG9jYWxfY291bnQiOjF9fV0sImZ1bmN0aW9ucyI6W10sInJlcXVpcmVkX3RpZXIiOiJPcmRpbmFyeSIsInJ1bnRpbWUiOiJDbGllbnQifQ==",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "error_kind": "type",
+        "ok": false
+      },
+      "fuel_budget": 10000,
+      "name": "index_negative",
+      "source": "capabilities { server.call }\non track.started { let xs = [1, 2]\n server.call(xs[0 - 1]) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjUuMH0seyJTdG9yZUxvY2FsIjowfSx7IkxvYWRMb2NhbCI6MH0seyJQdXNoTnVtYmVyIjowLjB9LCJJbmRleEdldCIseyJDYWxsIjp7Im5hbWUiOiJzZXJ2ZXIuY2FsbCIsImFyZ19jb3VudCI6MX19LCJQb3AiXSwibG9jYWxfY291bnQiOjF9fV0sImZ1bmN0aW9ucyI6W10sInJlcXVpcmVkX3RpZXIiOiJPcmRpbmFyeSIsInJ1bnRpbWUiOiJDbGllbnQifQ==",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "error_kind": "type",
+        "ok": false
+      },
+      "fuel_budget": 10000,
+      "name": "index_not_a_list",
+      "source": "capabilities { server.call }\non track.started { let x = 5\n server.call(x[0]) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjUuMH0sIkxlbiIseyJDYWxsIjp7Im5hbWUiOiJzZXJ2ZXIuY2FsbCIsImFyZ19jb3VudCI6MX19LCJQb3AiXSwibG9jYWxfY291bnQiOjB9fV0sImZ1bmN0aW9ucyI6W10sInJlcXVpcmVkX3RpZXIiOiJPcmRpbmFyeSIsInJ1bnRpbWUiOiJDbGllbnQifQ==",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "error_kind": "type",
+        "ok": false
+      },
+      "fuel_budget": 10000,
+      "name": "len_of_number_is_error",
+      "source": "capabilities { server.call }\non track.started { server.call(len(5)) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjEuMH0seyJDYWxsIjp7Im5hbWUiOiJzZXJ2ZXIuY2FsbCIsImFyZ19jb3VudCI6MX19LCJQb3AiXSwibG9jYWxfY291bnQiOjB9fV0sImZ1bmN0aW9ucyI6W10sInJlcXVpcmVkX3RpZXIiOiJPcmRpbmFyeSIsInJ1bnRpbWUiOiJDbGllbnQifQ==",
+      "event": [
+        "track",
+        "ended"
+      ],
+      "expect": {
+        "error_kind": "no_handler",
+        "ok": false
+      },
+      "fuel_budget": 10000,
+      "name": "no_such_handler",
+      "source": "capabilities { server.call }\non track.started { server.call(1) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjAuMH0seyJDYWxsIjp7Im5hbWUiOiJ0IiwiYXJnX2NvdW50IjoxfX0seyJQdXNoTnVtYmVyIjoxLjB9LHsiQ2FsbCI6eyJuYW1lIjoidCIsImFyZ19jb3VudCI6MX19LHsiUHVzaFN0cmluZyI6IiJ9LHsiQ2FsbCI6eyJuYW1lIjoidCIsImFyZ19jb3VudCI6MX19LHsiUHVzaFN0cmluZyI6ImEifSx7IkNhbGwiOnsibmFtZSI6InQiLCJhcmdfY291bnQiOjF9fSx7Ik1ha2VMaXN0IjowfSx7IkNhbGwiOnsibmFtZSI6InQiLCJhcmdfY291bnQiOjF9fSx7IlB1c2hOdW1iZXIiOjAuMH0seyJNYWtlTGlzdCI6MX0seyJDYWxsIjp7Im5hbWUiOiJ0IiwiYXJnX2NvdW50IjoxfX0seyJQdXNoQm9vbCI6dHJ1ZX0seyJDYWxsIjp7Im5hbWUiOiJ0IiwiYXJnX2NvdW50IjoxfX0seyJQdXNoQm9vbCI6ZmFsc2V9LHsiQ2FsbCI6eyJuYW1lIjoidCIsImFyZ19jb3VudCI6MX19LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjh9fSwiUG9wIl0sImxvY2FsX2NvdW50IjowfX1dLCJmdW5jdGlvbnMiOlt7Im5hbWUiOiJ0IiwicGFyYW1fY291bnQiOjEsImJsb2NrIjp7ImNvZGUiOlt7IkxvYWRMb2NhbCI6MH0seyJKdW1wSWZGYWxzZSI6NH0seyJQdXNoTnVtYmVyIjoxLjB9LCJSZXR1cm4iLHsiUHVzaE51bWJlciI6MC4wfSwiUmV0dXJuIl0sImxvY2FsX2NvdW50IjoxfX1dLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 51,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "0"
+              },
+              {
+                "n": "1"
+              },
+              {
+                "n": "0"
+              },
+              {
+                "n": "1"
+              },
+              {
+                "n": "0"
+              },
+              {
+                "n": "1"
+              },
+              {
+                "n": "1"
+              },
+              {
+                "n": "0"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "truthiness_in_if",
+      "source": "capabilities { server.call }\nfn t(x) {\n if x {\n  return 1\n }\n return 0\n}\non track.started { server.call(t(0), t(1), t(\"\"), t(\"a\"), t([]), t([0]), t(true), t(false)) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJHcmFwaGljc1JlbmRlciIsIkF1ZGlvQW5hbHl6ZSIsIkRhdGFQdWJsaWMiXSwicGxhdGZvcm1zIjpbXSwiaW1wb3J0cyI6W10sImhhbmRsZXJzIjpbeyJraW5kIjoiRXZlbnQiLCJldmVudF9uYW1lIjpbInZpc3VhbGl6ZXIiLCJmcmFtZSJdLCJwcmlvcml0eSI6MCwiYmxvY2siOnsiY29kZSI6W3siTG9hZFBhdGgiOlsiYXRtdXNpYyIsImF1ZGlvIiwiYmFuZDAiXX0seyJMb2FkUGF0aCI6WyJhdG11c2ljIiwiYXVkaW8iLCJiYW5kMSJdfSx7IkxvYWRQYXRoIjpbImF0bXVzaWMiLCJhdWRpbyIsImJhbmQyIl19LHsiTG9hZFBhdGgiOlsiYXRtdXNpYyIsImF1ZGlvIiwiYmFuZDMiXX0seyJMb2FkUGF0aCI6WyJhdG11c2ljIiwiYXVkaW8iLCJiYW5kNCJdfSx7IkxvYWRQYXRoIjpbImF0bXVzaWMiLCJhdWRpbyIsImJhbmQ1Il19LHsiTG9hZFBhdGgiOlsiYXRtdXNpYyIsImF1ZGlvIiwiYmFuZDYiXX0seyJMb2FkUGF0aCI6WyJhdG11c2ljIiwiYXVkaW8iLCJiYW5kNyJdfSx7IkNhbGwiOnsibmFtZSI6ImdyYXBoaWNzLnJlbmRlciIsImFyZ19jb3VudCI6OH19LCJQb3AiXSwibG9jYWxfY291bnQiOjB9fV0sImZ1bmN0aW9ucyI6W10sInJlcXVpcmVkX3RpZXIiOiJPcmRpbmFyeSIsInJ1bnRpbWUiOiJDbGllbnQifQ==",
+      "event": [
+        "visualizer",
+        "frame"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 10,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "10"
+              },
+              {
+                "n": "20"
+              },
+              {
+                "n": "30"
+              },
+              {
+                "n": "40"
+              },
+              {
+                "n": "50"
+              },
+              {
+                "n": "60"
+              },
+              {
+                "n": "70"
+              },
+              {
+                "n": "80"
+              }
+            ],
+            "name": "graphics.render"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "graphics_render_eight_args",
+      "source": "capabilities { graphics.render, audio.analyze, data.public }\non visualizer.frame {\n graphics.render(atmusic.audio.band0, atmusic.audio.band1, atmusic.audio.band2, atmusic.audio.band3, atmusic.audio.band4, atmusic.audio.band5, atmusic.audio.band6, atmusic.audio.band7)\n}",
+      "values": [
+        [
+          "atmusic.audio.band0",
+          {
+            "n": "10"
+          }
+        ],
+        [
+          "atmusic.audio.band1",
+          {
+            "n": "20"
+          }
+        ],
+        [
+          "atmusic.audio.band2",
+          {
+            "n": "30"
+          }
+        ],
+        [
+          "atmusic.audio.band3",
+          {
+            "n": "40"
+          }
+        ],
+        [
+          "atmusic.audio.band4",
+          {
+            "n": "50"
+          }
+        ],
+        [
+          "atmusic.audio.band5",
+          {
+            "n": "60"
+          }
+        ],
+        [
+          "atmusic.audio.band6",
+          {
+            "n": "70"
+          }
+        ],
+        [
+          "atmusic.audio.band7",
+          {
+            "n": "80"
+          }
+        ]
+      ],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hTdHJpbmciOiJhIn0seyJQdXNoU3RyaW5nIjoiQSJ9LHsiQmluYXJ5T3AiOiJFcSJ9LHsiUHVzaFN0cmluZyI6ImFiYyJ9LHsiUHVzaFN0cmluZyI6ImFiYyJ9LHsiQmluYXJ5T3AiOiJFcSJ9LHsiUHVzaFN0cmluZyI6ImFiYyJ9LHsiUHVzaFN0cmluZyI6IkFCQyJ9LHsiQmluYXJ5T3AiOiJOb3RFcSJ9LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjN9fSwiUG9wIl0sImxvY2FsX2NvdW50IjowfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 11,
+        "host_calls": [
+          {
+            "args": [
+              false,
+              true,
+              true
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "string_equality_is_case_sensitive",
+      "source": "capabilities { server.call }\non track.started { server.call(\"a\" == \"A\", \"abc\" == \"abc\", \"abc\" != \"ABC\") }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IkNhbGwiOnsibmFtZSI6ImYiLCJhcmdfY291bnQiOjB9fSx7IkNhbGwiOnsibmFtZSI6IkYiLCJhcmdfY291bnQiOjB9fSx7IkNhbGwiOnsibmFtZSI6InNlcnZlci5jYWxsIiwiYXJnX2NvdW50IjoyfX0sIlBvcCJdLCJsb2NhbF9jb3VudCI6MH19XSwiZnVuY3Rpb25zIjpbeyJuYW1lIjoiZiIsInBhcmFtX2NvdW50IjowLCJibG9jayI6eyJjb2RlIjpbeyJQdXNoTnVtYmVyIjoxLjB9LCJSZXR1cm4iXSwibG9jYWxfY291bnQiOjB9fSx7Im5hbWUiOiJGIiwicGFyYW1fY291bnQiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjIuMH0sIlJldHVybiJdLCJsb2NhbF9jb3VudCI6MH19XSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 8,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "1"
+              },
+              {
+                "n": "2"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "function_names_are_case_sensitive",
+      "source": "capabilities { server.call }\nfn f() { return 1 }\nfn F() { return 2 }\non track.started { server.call(f(), F()) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJEYXRhUHVibGljIiwiU2VydmVyQ2FsbCJdLCJwbGF0Zm9ybXMiOltdLCJpbXBvcnRzIjpbXSwiaGFuZGxlcnMiOlt7ImtpbmQiOiJFdmVudCIsImV2ZW50X25hbWUiOlsidHJhY2siLCJzdGFydGVkIl0sInByaW9yaXR5IjowLCJibG9jayI6eyJjb2RlIjpbeyJMb2FkUGF0aCI6WyJhdG11c2ljIiwidHJhY2siLCJ0aXRsZSJdfSx7IkxvYWRQYXRoIjpbImF0bXVzaWMiLCJ0cmFjayIsIlRpdGxlIl19LHsiQ2FsbCI6eyJuYW1lIjoic2VydmVyLmNhbGwiLCJhcmdfY291bnQiOjJ9fSwiUG9wIl0sImxvY2FsX2NvdW50IjowfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 4,
+        "host_calls": [
+          {
+            "args": [
+              "lower",
+              "Upper"
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "context_paths_are_case_sensitive",
+      "source": "capabilities { data.public, server.call }\non track.started { server.call(atmusic.track.title, atmusic.track.Title) }",
+      "values": [
+        [
+          "atmusic.track.title",
+          "lower"
+        ],
+        [
+          "atmusic.track.Title",
+          "Upper"
+        ]
+      ],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJTZXJ2ZXJDYWxsIl0sInBsYXRmb3JtcyI6W10sImltcG9ydHMiOltdLCJoYW5kbGVycyI6W3sia2luZCI6IkV2ZW50IiwiZXZlbnRfbmFtZSI6WyJ0cmFjayIsInN0YXJ0ZWQiXSwicHJpb3JpdHkiOjAsImJsb2NrIjp7ImNvZGUiOlt7IlB1c2hOdW1iZXIiOjAuMX0seyJQdXNoTnVtYmVyIjoxMjcuMzJ9LHsiUHVzaE51bWJlciI6MTY3NzcyMTcuMH0seyJQdXNoTnVtYmVyIjowLjF9LHsiUHVzaE51bWJlciI6MC4yfSx7IkJpbmFyeU9wIjoiQWRkIn0seyJQdXNoTnVtYmVyIjoxMjM0NTYuNzg5MDEyfSx7IlB1c2hOdW1iZXIiOjEwMDAwMDAuMH0seyJQdXNoTnVtYmVyIjoxMDAwMDAwLjB9LHsiQmluYXJ5T3AiOiJNdWwifSx7IkNhbGwiOnsibmFtZSI6InNlcnZlci5jYWxsIiwiYXJnX2NvdW50Ijo2fX0sIlBvcCJdLCJsb2NhbF9jb3VudCI6MH19XSwiZnVuY3Rpb25zIjpbXSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "track",
+        "started"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 12,
+        "host_calls": [
+          {
+            "args": [
+              {
+                "n": "0.1"
+              },
+              {
+                "n": "127.32"
+              },
+              {
+                "n": "16777217"
+              },
+              {
+                "n": "0.30000000000000004"
+              },
+              {
+                "n": "123456.789012"
+              },
+              {
+                "n": "1000000000000"
+              }
+            ],
+            "name": "server.call"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "number_literals_exact_decimals",
+      "source": "capabilities { server.call }\non track.started { server.call(0.1, 127.32, 16777217, 0.1 + 0.2, 123456.789012, 1000000 * 1000000) }",
+      "values": [],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJHcmFwaGljc1JlbmRlciIsIkF1ZGlvQW5hbHl6ZSIsIkRhdGFQdWJsaWMiXSwicGxhdGZvcm1zIjpbXSwiaW1wb3J0cyI6W10sImhhbmRsZXJzIjpbeyJraW5kIjoiRXZlbnQiLCJldmVudF9uYW1lIjpbInZpc3VhbGl6ZXIiLCJmcmFtZSJdLCJwcmlvcml0eSI6MCwiYmxvY2siOnsiY29kZSI6W3siTG9hZFBhdGgiOlsiYXRtdXNpYyIsImF1ZGlvIiwiYmFuZDAiXX0seyJMb2FkUGF0aCI6WyJhdG11c2ljIiwiYXVkaW8iLCJiYW5kMSJdfSx7IkxvYWRQYXRoIjpbImF0bXVzaWMiLCJhdWRpbyIsImJhbmQyIl19LHsiTG9hZFBhdGgiOlsiYXRtdXNpYyIsImF1ZGlvIiwiYmFuZDMiXX0seyJMb2FkUGF0aCI6WyJhdG11c2ljIiwiYXVkaW8iLCJiYW5kNCJdfSx7IkxvYWRQYXRoIjpbImF0bXVzaWMiLCJhdWRpbyIsImJhbmQ1Il19LHsiTG9hZFBhdGgiOlsiYXRtdXNpYyIsImF1ZGlvIiwiYmFuZDYiXX0seyJMb2FkUGF0aCI6WyJhdG11c2ljIiwiYXVkaW8iLCJiYW5kNyJdfSx7Ik1ha2VMaXN0Ijo4fSx7IlN0b3JlTG9jYWwiOjB9LHsiUHVzaE51bWJlciI6MC4wfSx7IlN0b3JlTG9jYWwiOjF9LHsiTG9hZExvY2FsIjoxfSx7IlB1c2hOdW1iZXIiOjguMH0seyJCaW5hcnlPcCI6Ikx0In0seyJKdW1wSWZGYWxzZSI6NjF9LHsiUHVzaE51bWJlciI6MjAuMH0seyJMb2FkTG9jYWwiOjF9LHsiUHVzaE51bWJlciI6MzUuMH0seyJCaW5hcnlPcCI6Ik11bCJ9LHsiQmluYXJ5T3AiOiJBZGQifSx7IlN0b3JlTG9jYWwiOjJ9LHsiTG9hZExvY2FsIjowfSx7IkxvYWRMb2NhbCI6MX0sIkluZGV4R2V0Iix7IlB1c2hOdW1iZXIiOjEuMn0seyJCaW5hcnlPcCI6Ik11bCJ9LHsiU3RvcmVMb2NhbCI6M30seyJMb2FkTG9jYWwiOjJ9LHsiUHVzaE51bWJlciI6MTMwLjB9LHsiTWFrZUxpc3QiOjJ9LHsiTG9hZExvY2FsIjoyfSx7IlB1c2hOdW1iZXIiOjMwLjB9LHsiQmluYXJ5T3AiOiJBZGQifSx7IlB1c2hOdW1iZXIiOjEzMC4wfSx7Ik1ha2VMaXN0IjoyfSx7IkxvYWRMb2NhbCI6Mn0seyJQdXNoTnVtYmVyIjoxNS4wfSx7IkJpbmFyeU9wIjoiQWRkIn0seyJQdXNoTnVtYmVyIjoxMzAuMH0seyJMb2FkTG9jYWwiOjN9LHsiQmluYXJ5T3AiOiJTdWIifSx7Ik1ha2VMaXN0IjoyfSx7IlB1c2hOdW1iZXIiOjgwLjB9LHsiTG9hZExvY2FsIjowfSx7IkxvYWRMb2NhbCI6MX0sIkluZGV4R2V0Iix7IkJpbmFyeU9wIjoiQWRkIn0seyJQdXNoTnVtYmVyIjoyMDAuMH0seyJMb2FkTG9jYWwiOjB9LHsiTG9hZExvY2FsIjoxfSwiSW5kZXhHZXQiLHsiQmluYXJ5T3AiOiJTdWIifSx7IlB1c2hOdW1iZXIiOjIwMC4wfSx7IkNhbGwiOnsibmFtZSI6ImdyYXBoaWNzLnRyaWFuZ2xlIiwiYXJnX2NvdW50Ijo2fX0sIlBvcCIseyJMb2FkTG9jYWwiOjF9LHsiUHVzaE51bWJlciI6MS4wfSx7IkJpbmFyeU9wIjoiQWRkIn0seyJTdG9yZUxvY2FsIjoxfSx7Ikp1bXAiOjEyfV0sImxvY2FsX2NvdW50Ijo0fX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "visualizer",
+        "frame"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 408,
+        "host_calls": [
+          {
+            "args": [
+              [
+                {
+                  "n": "20"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "50"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "35"
+                },
+                {
+                  "n": "45.400000000000006"
+                }
+              ],
+              {
+                "n": "150.5"
+              },
+              {
+                "n": "129.5"
+              },
+              {
+                "n": "200"
+              }
+            ],
+            "name": "graphics.triangle"
+          },
+          {
+            "args": [
+              [
+                {
+                  "n": "55"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "85"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "70"
+                },
+                {
+                  "n": "91.12"
+                }
+              ],
+              {
+                "n": "112.4"
+              },
+              {
+                "n": "167.6"
+              },
+              {
+                "n": "200"
+              }
+            ],
+            "name": "graphics.triangle"
+          },
+          {
+            "args": [
+              [
+                {
+                  "n": "90"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "120"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "105"
+                },
+                {
+                  "n": "103.84"
+                }
+              ],
+              {
+                "n": "101.8"
+              },
+              {
+                "n": "178.2"
+              },
+              {
+                "n": "200"
+              }
+            ],
+            "name": "graphics.triangle"
+          },
+          {
+            "args": [
+              [
+                {
+                  "n": "125"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "155"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "140"
+                },
+                {
+                  "n": "100.84"
+                }
+              ],
+              {
+                "n": "104.3"
+              },
+              {
+                "n": "175.7"
+              },
+              {
+                "n": "200"
+              }
+            ],
+            "name": "graphics.triangle"
+          },
+          {
+            "args": [
+              [
+                {
+                  "n": "160"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "190"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "175"
+                },
+                {
+                  "n": "106"
+                }
+              ],
+              {
+                "n": "100"
+              },
+              {
+                "n": "180"
+              },
+              {
+                "n": "200"
+              }
+            ],
+            "name": "graphics.triangle"
+          },
+          {
+            "args": [
+              [
+                {
+                  "n": "195"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "225"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "210"
+                },
+                {
+                  "n": "110.08"
+                }
+              ],
+              {
+                "n": "96.6"
+              },
+              {
+                "n": "183.4"
+              },
+              {
+                "n": "200"
+              }
+            ],
+            "name": "graphics.triangle"
+          },
+          {
+            "args": [
+              [
+                {
+                  "n": "230"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "260"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "245"
+                },
+                {
+                  "n": "112.96000000000001"
+                }
+              ],
+              {
+                "n": "94.2"
+              },
+              {
+                "n": "185.8"
+              },
+              {
+                "n": "200"
+              }
+            ],
+            "name": "graphics.triangle"
+          },
+          {
+            "args": [
+              [
+                {
+                  "n": "265"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "295"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "280"
+                },
+                {
+                  "n": "119.32"
+                }
+              ],
+              {
+                "n": "88.9"
+              },
+              {
+                "n": "191.1"
+              },
+              {
+                "n": "200"
+              }
+            ],
+            "name": "graphics.triangle"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "demo_band_triangles",
+      "source": "capabilities { graphics.render, audio.analyze, data.public }\non visualizer.frame {\n let b = [atmusic.audio.band0, atmusic.audio.band1, atmusic.audio.band2, atmusic.audio.band3, atmusic.audio.band4, atmusic.audio.band5, atmusic.audio.band6, atmusic.audio.band7]\n let i = 0\n while i < 8 {\n  let x = 20 + i * 35\n  let h = b[i] * 1.2\n  graphics.triangle([x, 130], [x + 30, 130], [x + 15, 130 - h], 80 + b[i], 200 - b[i], 200)\n  i = i + 1\n }\n}",
+      "values": [
+        [
+          "atmusic.audio.band0",
+          {
+            "n": "70.5"
+          }
+        ],
+        [
+          "atmusic.audio.band1",
+          {
+            "n": "32.4"
+          }
+        ],
+        [
+          "atmusic.audio.band2",
+          {
+            "n": "21.8"
+          }
+        ],
+        [
+          "atmusic.audio.band3",
+          {
+            "n": "24.3"
+          }
+        ],
+        [
+          "atmusic.audio.band4",
+          {
+            "n": "20"
+          }
+        ],
+        [
+          "atmusic.audio.band5",
+          {
+            "n": "16.6"
+          }
+        ],
+        [
+          "atmusic.audio.band6",
+          {
+            "n": "14.2"
+          }
+        ],
+        [
+          "atmusic.audio.band7",
+          {
+            "n": "8.9"
+          }
+        ]
+      ],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJHcmFwaGljc1JlbmRlciIsIkF1ZGlvQW5hbHl6ZSIsIkRhdGFQdWJsaWMiXSwicGxhdGZvcm1zIjpbXSwiaW1wb3J0cyI6W10sImhhbmRsZXJzIjpbeyJraW5kIjoiRXZlbnQiLCJldmVudF9uYW1lIjpbInZpc3VhbGl6ZXIiLCJmcmFtZSJdLCJwcmlvcml0eSI6MCwiYmxvY2siOnsiY29kZSI6W3siTG9hZFBhdGgiOlsiYXRtdXNpYyIsImF1ZGlvIiwibGV2ZWwiXX0seyJTdG9yZUxvY2FsIjowfSx7IlB1c2hOdW1iZXIiOjE1OC4wfSx7IlB1c2hOdW1iZXIiOjcwLjB9LHsiTG9hZExvY2FsIjowfSx7IkJpbmFyeU9wIjoiU3ViIn0seyJNYWtlTGlzdCI6Mn0seyJQdXNoTnVtYmVyIjoxNTguMH0seyJMb2FkTG9jYWwiOjB9LHsiUHVzaE51bWJlciI6MS40fSx7IkJpbmFyeU9wIjoiTXVsIn0seyJCaW5hcnlPcCI6IkFkZCJ9LHsiUHVzaE51bWJlciI6MTMwLjB9LHsiTWFrZUxpc3QiOjJ9LHsiUHVzaE51bWJlciI6MTU4LjB9LHsiTG9hZExvY2FsIjowfSx7IlB1c2hOdW1iZXIiOjEuNH0seyJCaW5hcnlPcCI6Ik11bCJ9LHsiQmluYXJ5T3AiOiJTdWIifSx7IlB1c2hOdW1iZXIiOjEzMC4wfSx7Ik1ha2VMaXN0IjoyfSx7IlB1c2hOdW1iZXIiOjMxLjB9LHsiUHVzaE51bWJlciI6MTU4LjB9LHsiUHVzaE51bWJlciI6MTQ0LjB9LHsiQ2FsbCI6eyJuYW1lIjoiZ3JhcGhpY3MudHJpYW5nbGUiLCJhcmdfY291bnQiOjZ9fSwiUG9wIix7IlB1c2hOdW1iZXIiOjE1OC4wfSx7IlB1c2hOdW1iZXIiOjEwMC4wfSx7IkxvYWRMb2NhbCI6MH0seyJQdXNoTnVtYmVyIjoyLjB9LHsiQmluYXJ5T3AiOiJEaXYifSx7IkJpbmFyeU9wIjoiU3ViIn0seyJNYWtlTGlzdCI6Mn0seyJQdXNoTnVtYmVyIjoxNTguMH0seyJMb2FkTG9jYWwiOjB9LHsiUHVzaE51bWJlciI6MC43fSx7IkJpbmFyeU9wIjoiTXVsIn0seyJCaW5hcnlPcCI6IkFkZCJ9LHsiUHVzaE51bWJlciI6MTMwLjB9LHsiTWFrZUxpc3QiOjJ9LHsiUHVzaE51bWJlciI6MTU4LjB9LHsiTG9hZExvY2FsIjowfSx7IlB1c2hOdW1iZXIiOjAuN30seyJCaW5hcnlPcCI6Ik11bCJ9LHsiQmluYXJ5T3AiOiJTdWIifSx7IlB1c2hOdW1iZXIiOjEzMC4wfSx7Ik1ha2VMaXN0IjoyfSx7IlB1c2hOdW1iZXIiOjI1NS4wfSx7IlB1c2hOdW1iZXIiOjIwMC4wfSx7IlB1c2hOdW1iZXIiOjYwLjB9LHsiQ2FsbCI6eyJuYW1lIjoiZ3JhcGhpY3MudHJpYW5nbGUiLCJhcmdfY291bnQiOjZ9fSwiUG9wIl0sImxvY2FsX2NvdW50IjoxfX1dLCJmdW5jdGlvbnMiOltdLCJyZXF1aXJlZF90aWVyIjoiT3JkaW5hcnkiLCJydW50aW1lIjoiQ2xpZW50In0=",
+      "event": [
+        "visualizer",
+        "frame"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 52,
+        "host_calls": [
+          {
+            "args": [
+              [
+                {
+                  "n": "158"
+                },
+                {
+                  "n": "6.299999999999997"
+                }
+              ],
+              [
+                {
+                  "n": "247.18"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "68.82000000000001"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              {
+                "n": "31"
+              },
+              {
+                "n": "158"
+              },
+              {
+                "n": "144"
+              }
+            ],
+            "name": "graphics.triangle"
+          },
+          {
+            "args": [
+              [
+                {
+                  "n": "158"
+                },
+                {
+                  "n": "68.15"
+                }
+              ],
+              [
+                {
+                  "n": "202.59"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              [
+                {
+                  "n": "113.41"
+                },
+                {
+                  "n": "130"
+                }
+              ],
+              {
+                "n": "255"
+              },
+              {
+                "n": "200"
+              },
+              {
+                "n": "60"
+              }
+            ],
+            "name": "graphics.triangle"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "demo_triangle_pulse",
+      "source": "capabilities { graphics.render, audio.analyze, data.public }\non visualizer.frame {\n let l = atmusic.audio.level\n graphics.triangle([158, 70 - l], [158 + l * 1.4, 130], [158 - l * 1.4, 130], 31, 158, 144)\n graphics.triangle([158, 100 - l / 2], [158 + l * 0.7, 130], [158 - l * 0.7, 130], 255, 200, 60)\n}",
+      "values": [
+        [
+          "atmusic.audio.level",
+          {
+            "n": "63.7"
+          }
+        ]
+      ],
+      "version_tokens": {}
+    },
+    {
+      "bytecode_b64": "QVRDTEFNAAAAAnsiZm9ybWF0X3ZlcnNpb24iOjIsImNhcGFiaWxpdGllcyI6WyJHcmFwaGljc1JlbmRlciJdLCJwbGF0Zm9ybXMiOltdLCJpbXBvcnRzIjpbXSwiaGFuZGxlcnMiOlt7ImtpbmQiOiJFdmVudCIsImV2ZW50X25hbWUiOlsidmlzdWFsaXplciIsImZyYW1lIl0sInByaW9yaXR5IjowLCJibG9jayI6eyJjb2RlIjpbeyJQdXNoTnVtYmVyIjoxMC4wfSx7IlB1c2hOdW1iZXIiOjEwLjB9LHsiTWFrZUxpc3QiOjJ9LHsiUHVzaE51bWJlciI6MTAwLjB9LHsiUHVzaE51bWJlciI6MTAuMH0seyJNYWtlTGlzdCI6Mn0seyJQdXNoTnVtYmVyIjo1MC4wfSx7IlB1c2hOdW1iZXIiOjkwLjB9LHsiTWFrZUxpc3QiOjJ9LHsiUHVzaE51bWJlciI6MjU1LjB9LHsiUHVzaE51bWJlciI6MTI4LjB9LHsiUHVzaE51bWJlciI6MC4wfSx7IkNhbGwiOnsibmFtZSI6ImdyYXBoaWNzLnRyaWFuZ2xlIiwiYXJnX2NvdW50Ijo2fX0sIlBvcCJdLCJsb2NhbF9jb3VudCI6MH19XSwiZnVuY3Rpb25zIjpbXSwicmVxdWlyZWRfdGllciI6Ik9yZGluYXJ5IiwicnVudGltZSI6IkNsaWVudCJ9",
+      "event": [
+        "visualizer",
+        "frame"
+      ],
+      "expect": {
+        "cancelled": false,
+        "fuel_used": 14,
+        "host_calls": [
+          {
+            "args": [
+              [
+                {
+                  "n": "10"
+                },
+                {
+                  "n": "10"
+                }
+              ],
+              [
+                {
+                  "n": "100"
+                },
+                {
+                  "n": "10"
+                }
+              ],
+              [
+                {
+                  "n": "50"
+                },
+                {
+                  "n": "90"
+                }
+              ],
+              {
+                "n": "255"
+              },
+              {
+                "n": "128"
+              },
+              {
+                "n": "0"
+              }
+            ],
+            "name": "graphics.triangle"
+          }
+        ],
+        "ok": true,
+        "storage_ops": []
+      },
+      "fuel_budget": 10000,
+      "name": "graphics_triangle",
+      "source": "capabilities { graphics.render }\non visualizer.frame { graphics.triangle([10, 10], [100, 10], [50, 90], 255, 128, 0) }",
+      "values": [],
+      "version_tokens": {}
+    }
+  ],
+  "suite": "atclam-conformance"
+}

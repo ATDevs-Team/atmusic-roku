@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="NetworkTask" extends="Task">
+    <interface>
+        <!-- Set these, then set control="RUN" to fire the request. -->
+        <field id="requestUrl" type="string" />
+        <field id="requestMethod" type="string" />   <!-- GET | POST | PATCH | DELETE -->
+        <field id="requestId" type="string" />       <!-- echoed back on response so callers can tell requests apart -->
+        <field id="requestJson" type="assocarray" /> <!-- optional: sent as a JSON body -->
+
+        <!-- assocarray: { requestId, success, code, body, json } -->
+        <field id="response" type="assocarray" alwaysNotify="true" />
+    </interface>
+
+    <script type="text/brightscript" uri="pkg:/components/NetworkTask.brs" />
+    <script type="text/brightscript" uri="pkg:/components/DebugLog.brs" />
+</component>

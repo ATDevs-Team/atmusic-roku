@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="AtclamTask" extends="Task">
+    <interface>
+        <!-- { kind: "conformance" | "probe" | "run", ... } -->
+        <field id="request" type="assocarray" />
+        <!-- { ok, text, ... } -->
+        <field id="result" type="assocarray" alwaysNotify="true" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/AtclamVm.brs" />
+    <script type="text/brightscript" uri="pkg:/components/AtclamTask.brs" />
+    <script type="text/brightscript" uri="pkg:/components/DebugLog.brs" />
+</component>

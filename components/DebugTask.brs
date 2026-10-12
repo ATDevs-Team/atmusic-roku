@@ -1,0 +1,49 @@
+' ============================================================================
+' DebugTask.brs - background thread that collects DLog() entries and emits
+' them in batches. Best effort: the buffer is bounded (oldest dropped) and a
+' batch that fails to send is not retried.
+' ============================================================================
+
+sub init()
+    m.top.functionName = "run"
+end sub
+
+sub run()
+    port = CreateObject("roMessagePort")
+    m.global.observeField("dbg", port)
+    m.top.observeField("canSend", port)
+    m.top.ready = true
+
+    buf = []
+    maxBuf = 500
+    perBatch = 150
+    clock = CreateObject("roTimespan")
+
+    while true
+        msg = wait(1000, port)
+        if type(msg) = "roSGNodeEvent"
+            if msg.GetField() = "dbg"
+                d = msg.GetData()
+                if d <> invalid
+                    buf.Push(d)
+                    if buf.Count() > maxBuf then buf.Shift()
+                end if
+            end if
+        end if
+
+        if m.top.canSend and buf.Count() > 0
+            if buf.Count() >= 40 or clock.TotalMilliseconds() >= 8000
+                n = buf.Count()
+                if n > perBatch then n = perBatch
+                batch = []
+                for i = 1 to n
+                    batch.Push(buf.Shift())
+                end for
+                m.top.batch = {entries: batch, session: m.top.session}
+                clock.Mark()
+            end if
+        else if buf.Count() = 0
+            clock.Mark()
+        end if
+    end while
+end sub

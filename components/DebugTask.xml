@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="DebugTask" extends="Task">
+    <interface>
+        <!-- AppShell sets this true while a login session exists (the debug endpoint needs one);
+             entries are buffered (bounded) until then. -->
+        <field id="canSend" type="boolean" value="false" />
+        <field id="session" type="string" />
+        <!-- set true once the thread is listening, so AppShell can log its startup banner without losing it -->
+        <field id="ready" type="boolean" value="false" />
+        <!-- { entries: [ {level,msg,ts,screen} ], session } - AppShell POSTs it to /api/debug/logs -->
+        <field id="batch" type="assocarray" alwaysNotify="true" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/components/DebugTask.brs" />
+</component>

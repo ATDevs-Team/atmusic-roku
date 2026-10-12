@@ -1,0 +1,24 @@
+title=ATMusic
+major_version=0
+minor_version=4
+build_version=6
+
+; This is the version string reported to the ATDevs Update API as
+; "myversion". Keep this in sync with major_version.minor_version.build_version
+; above (or bump both together) whenever you cut a new release.
+app_version=0.4.6
+
+mm_icon_focus_hd=pkg:/images/channel-poster_hd.png
+mm_icon_focus_sd=pkg:/images/channel-poster_sd.png
+mm_icon_side_hd=pkg:/images/channel-poster_hd.png
+mm_icon_side_sd=pkg:/images/channel-poster_sd.png
+
+splash_screen_hd=pkg:/images/splash_hd.png
+splash_screen_sd=pkg:/images/splash_sd.png
+splash_screen_fhd=pkg:/images/splash_fhd.png
+splash_min_time=0
+
+ui_resolutions=fhd
+supports_input_launch=1
+
+bs_const=IS_DEV=false
