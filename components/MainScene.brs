@@ -34,7 +34,7 @@
 ' ============================================================================
 
 sub init()
-    m.currentVersion = "0.4.6"
+    m.currentVersion = "0.4.7"
     m.platform = "roku"
     m.service = "spool"   ' update-service id; the roku/atmusic id is not registered on updates.atdevs.org yet
 

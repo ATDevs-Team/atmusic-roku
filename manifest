@@ -20,12 +20,12 @@ title=ATMusic
 ; Channel version, shown as major.minor.build.
 major_version=0
 minor_version=4
-build_version=6
+build_version=7
 
 ; This is the version string reported to the ATDevs Update API as
 ; "myversion". Keep this in sync with major_version.minor_version.build_version
 ; above (or bump both together) whenever you cut a new release.
-app_version=0.4.6
+app_version=0.4.7
 
 ; Main menu tile icons. "focus" is shown when the tile is selected;
 ; "side" is used in the side-bar menu.
