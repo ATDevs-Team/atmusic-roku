@@ -1,4 +1,23 @@
+; ATMusic for Roku
+; Copyright (C) 2026 ATDevs Team
+;
+; This program is free software: you can redistribute it and/or modify
+; it under the terms of the GNU General Public License as published by
+; the Free Software Foundation, either version 3 of the License, or
+; (at your option) any later version.
+;
+; This program is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+; Channel name shown on the Roku home screen and in the Channel Store.
 title=ATMusic
+
+; Channel version, shown as major.minor.build.
 major_version=0
 minor_version=4
 build_version=6
@@ -8,17 +27,28 @@ build_version=6
 ; above (or bump both together) whenever you cut a new release.
 app_version=0.4.6
 
+; Main menu tile icons. "focus" is shown when the tile is selected;
+; "side" is used in the side-bar menu.
 mm_icon_focus_hd=pkg:/images/channel-poster_hd.png
 mm_icon_focus_sd=pkg:/images/channel-poster_sd.png
 mm_icon_side_hd=pkg:/images/channel-poster_hd.png
 mm_icon_side_sd=pkg:/images/channel-poster_sd.png
 
+; Splash screens shown at launch, one per display resolution.
+; splash_min_time is the minimum time in milliseconds the splash stays up
+; (0 means no minimum).
 splash_screen_hd=pkg:/images/splash_hd.png
 splash_screen_sd=pkg:/images/splash_sd.png
 splash_screen_fhd=pkg:/images/splash_fhd.png
 splash_min_time=0
 
+; UI resolution the channel is designed for. "fhd" means 1920x1080.
 ui_resolutions=fhd
+
+; 1 allows the channel to be launched with input (deep links) from other
+; channels or search. 0 disables it.
 supports_input_launch=1
 
+; BrightScript constants available at compile time.
+; IS_DEV=false marks this as a release build.
 bs_const=IS_DEV=false
